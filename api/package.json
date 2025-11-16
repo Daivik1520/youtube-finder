@@ -1,0 +1,15 @@
+{
+  "name": "youtube-finder-api",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "dist/server.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.api.json",
+    "start": "node dist/server.js",
+    "dev": "tsx api/server.ts"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "cors": "^2.8.5"
+  }
+}

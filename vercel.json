@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "functions": {
+    "api/search-fallback.ts": {
+      "maxDuration": 30
+    },
+    "api/health-fallback.ts": {
+      "maxDuration": 10
+    }
+  },
+  "routes": [
+    {
+      "src": "/api/youtube/search",
+      "dest": "api/search-fallback.ts"
+    },
+    {
+      "src": "/api/youtube/check-yt-dlp",
+      "dest": "api/health-fallback.ts"
+    },
+    {
+      "src": "/api/health",
+      "dest": "api/health-fallback.ts"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "dist/$1"
+    }
+  ],
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "installCommand": "npm install"
+}
